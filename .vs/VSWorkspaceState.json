@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ServiceApp",
-    "\\ServiceApp\\ServiceApp",
-    "\\ServiceApp\\ServiceApp\\Areas",
-    "\\ServiceApp\\ServiceApp\\Areas\\Client",
-    "\\ServiceApp\\ServiceApp\\Areas\\Client\\Views",
-    "\\ServiceApp\\ServiceApp\\Areas\\Client\\Views\\Employees"
+    ""
   ],
+  "SelectedNode": "\\ServiceApp.sln",
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,88 @@
+﻿@model ServiceApp.Models.ViewModels.ArticleVM
+
+@{
+    ViewData["Title"] = "Service4U";
+}
+
+<br />
+<br />
+
+<h3 class="text-center">Edit Article</h3>
+<form asp-action="Edit" method="POST" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Article.ArticleID" />
+    <div class="row px-2 mx-2 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-8 mt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Article.Name"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Article.Name" class="form-control" />
+                    <span asp-validation-for="Article.Name" class="text-danger"></span>
+                </div>
+            </div>
+
+                <div class="form-group row">
+                    <div class="col-4">
+                            <label asp-for="Article.Description"></label>
+                    </div>
+                    <div class="col-8">
+                        <textarea asp-for="Article.Description" style="height:300px" class="form-control"></textarea>
+                        <span asp-validation-for="Article.Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label for="Category"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        @Html.DropDownListFor(m => m.Article.CategoryID, Model.ListCategories, "-Select category-", new{@class = "form-control"})
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Article.UrlImage"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input type="file" name="files" id="fileUpload" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group  row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.Article.ArticleID"> Update</button>
+                </div>
+                <div class="col">
+                    <a asp-action="Index" class="btn btn-success form-control">Return</a>
+                </div>
+            </div>
+            <div class="col-4 pt-3">
+                <img src="@Model.Article.UrlImage" width="100%" style="border-radius: 5px; border: 1px solid #bbb9b9" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    <script src="https://cdn.tiny.cloud/1/qukxrn62f4bz0iv6z7enaelkkzuzugir28y709xit9xm659s/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'lists',
+            menubar: 'file edit format'
+        });
+    </script>
+}
