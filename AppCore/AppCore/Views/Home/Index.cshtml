@@ -1,0 +1,123 @@
+﻿@model IEnumerable<AppCore.Models.Employees>
+@{
+    ViewData["Title"] = "Employees";
+}
+
+ <h1>Service4U Employees</h1>
+ <div class="row">
+     <div class="offset-9 col-3 mb-3">
+         <a asp-action="Create" asp-controller="Home" class="btn btn-secondary d-block mx-auto btn-lg">
+            <i class="bi bi-file-plus-fill"></i> New user
+         </a>
+     </div>
+ </div>
+<div class="row">
+    <div class="offset-12">
+       <div class="card border">
+           <div class="card-header bg-dark">
+               <h3 class="text-white"><strong>Users list</strong></h3>
+           </div>
+           <div class="card-body">
+               <div class="table-responsive">
+                   @if(Model.Count() > 0)
+                    {
+                        <table class="table table-bordered" id="tblUsers" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                        <th>@Html.DisplayNameFor(m => m.Id)</th>
+                                        <th>@Html.DisplayNameFor(m => m.Name)</th>
+                                        <th>@Html.DisplayNameFor(m => m.Suburb)</th>
+                                        <th>@Html.DisplayNameFor(m => m.Phone)</th>
+                                        <th>@Html.DisplayNameFor(m => m.Available)</th>
+                                        <th>@Html.DisplayNameFor(m => m.Active)</th>
+                                        <th>@Html.DisplayNameFor(m => m.CreatedDate)</th>
+                                        <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var item in Model)
+                                {
+                                    <tr>
+                                        <td>@Html.DisplayFor(m => item.Id)</td>
+                                        <td>@Html.DisplayFor(m => item.Name)</td>
+                                        <td>@Html.DisplayFor(m => item.Suburb)</td>
+                                        <td>@Html.DisplayFor(m => item.Phone)</td>
+                                        <td>@Html.DisplayFor(m => item.Available)</td>
+                                        <th>@Html.DisplayFor(m => item.Active)</th>
+                                        <td>@Html.DisplayFor(m => item.CreatedDate)</td>
+                                        <td>
+                                            <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-file-plus-fill"></i> Edit</a>
+                                            <a class="btn btn-secondary" asp-action="Detail" asp-route-id="@item.Id"><i class="bi bi-info-circle-fill"></i> Details</a>
+                                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-eraser-fill"></i> Delete</a>
+                                            <a class="btn btn-danger" asp-action="Active" asp-route-id="@item.Id"><i class="bi bi-eraser-fill"></i> Active</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p>There is no users</p>
+                    }
+                </div>
+           </div>
+       </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function (){
+            //Call database
+            $('#tblUsers').DataTable({
+                language: {
+                    "decimal": "",
+                    "emptyTable": "No information",
+                    "info": "Showing _START_ a _END_ of _TOTAL_ Entries",
+                    "infoEmpty": "Showing 0 to 0 of Entries",
+                    "InfoFiltered": "(Filter of _MAX_ total entries)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Show _MENU_ Entries",
+                    "loadingRecords": "Loading...",
+                    "processing": "Loading...",
+                    "search": "Search:",
+                    "zeroRecords": "No results found",
+                    "paginate": {
+                        "first": "First",
+                        "last": "Last",
+                        "next": "Next",
+                        "previous": "Previous"
+                    }
+                }
+            })
+        })
+
+       function Delete(url){
+           swal({
+               title: "Are you sure?",
+               text: "This cant be recovered",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#DD6B55",
+               confirmButtonText: "Yes, delete",
+               closeOnConfirm: true
+           }, function(){
+               $.ajax({
+                   type: 'DELETE',
+                   url: url,
+                   success: function(data){
+                       if(data.success){
+                           toastr.success(data.message);
+                           dataTable.ajax.reload();
+                           
+                       }else{
+                           toastr.error(data.message);
+                       }
+                   }
+               });
+           });
+       }
+    </script>
+}

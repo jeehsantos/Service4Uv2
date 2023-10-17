@@ -1,0 +1,81 @@
+﻿@model AppCore.Models.Employees
+@{
+    ViewData["Title"] = "Edit user";
+}
+
+<h1 class="text-center">Service4U Employees</h1>
+
+<div class="row">
+    <div class="offset-12">
+        <div class="card border">
+            <div class="card-header bg-dark">
+                <h3 class="text-white"><strong>Edit user</strong></h3>
+            </div>
+            <div class="card-body">
+                <form asp-action="Edit">
+
+                    <!--User ID as hidden field-->
+                    <input type="hidden" asp-for="Id"/>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Ingresa el nombre" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Surname" class="control-label"></label>
+                        <input asp-for="Surname" class="form-control" placeholder="Insert Surname" />
+                        <span asp-validation-for="Surname" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Phone" class="control-label"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="Insert Phone" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" type="email" class="form-control" placeholder="Insert Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Nationality" class="control-label"></label>
+                        <input asp-for="Nationality" class="form-control" placeholder="Insert Nationality" />
+                        <span asp-validation-for="Nationality" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="About" class="control-label"></label>
+                        <input asp-for="About" class="form-control" placeholder="Insert About" />
+                        <span asp-validation-for="About" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Suburb" class="control-label"></label>
+                        <input asp-for="Suburb" class="form-control" placeholder="Insert Suburb" />
+                        <span asp-validation-for="Suburb" class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group form-check">
+                        <input asp-for="Available" class="form-control form-check-input" id="flexCheckChecked" type="checkbox" />
+                        <label asp-for="Available" class="control-label form-check-label" for="flexCheckChecked">
+                            Available
+                        </label>
+                        <span asp-validation-for="Available" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-primary d-block mx-auto"><i class="bi bi-pencil-fill"></i> Edit Usuario</button>
+                    </div>
+                </form>
+                <a asp-controller="Home" asp-action="Index">Return</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
