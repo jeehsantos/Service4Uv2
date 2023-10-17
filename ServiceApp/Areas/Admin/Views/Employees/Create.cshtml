@@ -1,0 +1,136 @@
+﻿@model ServiceApp.Models.Employee
+
+@{
+    ViewData["Title"] = "Service4U";
+}
+
+<br />
+<br />
+
+<h3 class="text-center">New Employee</h3>
+<form method="POST" asp-action="Create">
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Name"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Phone"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="About"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="About" class="form-control" />
+                        <span asp-validation-for="About" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Suburb"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Suburb" class="form-control" />
+                        <span asp-validation-for="Suburb" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Language"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Language" class="form-control" />
+                        <span asp-validation-for="Language" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Email"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Image"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Image" class="form-control" />
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="DateOfBirth"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="DateOfBirth" class="form-control" />
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+ 
+
+            <div class="form-group row">
+                <div class="col-8">
+                    <partial name="_ViewCreateReturn" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</form>

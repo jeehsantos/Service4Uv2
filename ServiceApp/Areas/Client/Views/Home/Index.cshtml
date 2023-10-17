@@ -1,0 +1,26 @@
+﻿
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "Service4U";
+}
+     @if (!SignInManager.IsSignedIn(User))
+{ 
+
+
+<div class="text-center">
+    <img src="./img/service4u.png">
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">iupiiii building Web apps with ASP.NET Core</a>.</p>
+</div>
+}
+else{
+
+
+<br />
+<br />
+    
+<h3 class="text-center">My Profile</h3>
+    
+
+}
