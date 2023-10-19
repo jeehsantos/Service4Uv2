@@ -4,6 +4,7 @@ using ServiceApp.Data;
 using ServiceApp.Data.Data.Repository.IRepository;
 using ServiceApp.Data.Data.Repository;
 using ServiceApp.Models;
+using ServiceApp.Data.Data.Initializer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,10 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 //Add workUnit
 builder.Services.AddScoped<IWorkUnit, WorkUnit>();
+
+//Seeding data
+builder.Services.AddScoped<IStarterDB, StarterDB>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -35,6 +40,9 @@ else
 }
 app.UseStaticFiles();
 
+//Method to seed DB
+SeedDB();
+
 app.UseRouting();
 
 app.UseAuthorization();
@@ -45,3 +53,14 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.Run();
+
+
+//Method for seeding
+void SeedDB()
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbStarter = scope.ServiceProvider.GetRequiredService<IStarterDB>();
+        dbStarter.Start();
+    }
+}
