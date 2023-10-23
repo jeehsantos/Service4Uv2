@@ -12,6 +12,7 @@ namespace ServiceApp.Data.Data.Repository.IRepository
     {
         IEnumerable<SelectListItem> GetListEmployees();
 
+        public Employee GetEmployee(string id);
         void Update(Employee employee);
     }
 }

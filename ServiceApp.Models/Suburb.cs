@@ -14,8 +14,8 @@ namespace ServiceApp.Models
         public int SuburbID { get; set; }
         public string Name { get; set; }
 
-        [ForeignKey("CityID")]
-        public int? CityID { get; set; }
-        public City City { get; set; }
+        //[ForeignKey("CityID")]
+        //public int? CityID { get; set; }
+        //public City City { get; set; }
     }
 }

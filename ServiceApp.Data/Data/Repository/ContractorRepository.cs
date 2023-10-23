@@ -35,7 +35,7 @@ namespace ServiceApp.Data.Data.Repository
             objCont.Name = contractor.Name;
             objCont.Phone = contractor.Phone;
             objCont.Email = contractor.Email;
-            objCont.City = contractor.City;
+            //objCont.City = contractor.City;
             objCont.Suburb = contractor.Suburb;
             objCont.JobType = contractor.JobType;
             objCont.CategoryID = contractor.CategoryID;

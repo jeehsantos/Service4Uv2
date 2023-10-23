@@ -31,7 +31,21 @@ namespace ServiceApp.Areas.Client.Controllers
         {
             return View();
         }
- 
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Employee employee)
+        {
+            if (ModelState.IsValid)
+            {
+                _workUnit.Employee.Update(employee);
+                _workUnit.Save();
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(employee);
+        }
+
         #region
         [HttpGet]
         public IActionResult GetAll()

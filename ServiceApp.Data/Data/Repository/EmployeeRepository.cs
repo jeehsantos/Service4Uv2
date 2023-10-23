@@ -29,18 +29,29 @@ namespace ServiceApp.Data.Data.Repository
             );
         }
 
+        public Employee GetEmployee(string userId)
+        {
+            return _context.Employees.FirstOrDefault(i => i.id == userId);
+        }
+
         public void Update(Employee employee)
         {
             var objEmp = _context.Employees.FirstOrDefault(s => s.EmployeeID == employee.EmployeeID);
+            objEmp.EmployeeID = employee.EmployeeID;
             objEmp.Name = employee.Name;
             objEmp.Phone = employee.Phone;
             objEmp.Email = employee.Email;
             objEmp.About = employee.About;
-            objEmp.Suburb = employee.Suburb;
+            //objEmp.SuburbID = employee.SuburbID;
             objEmp.DateOfBirth = employee.DateOfBirth;
             objEmp.Language = employee.Language;
+            objEmp.Review = employee.Review; 
             objEmp.Image = employee.Image;
-
+            objEmp.id = employee.id;
+            objEmp.Active = employee.Active;
+            objEmp.DateCreated = employee.DateCreated;
+            objEmp.NationalityID = employee.NationalityID;
+            objEmp.Available = employee.Available;
             _context.SaveChanges();
         }
     }

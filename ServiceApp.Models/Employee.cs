@@ -58,11 +58,11 @@ namespace ServiceApp.Models
         public bool Active { get; set; }
         public DateTime DateCreated { get; set; }
 
-        //COD01
-        [ForeignKey("CityID")]
-        public City City { get; set; }
+        ////COD01
+        //[ForeignKey("CityID")]
+        //public City City { get; set; }
 
-        [Display(Name = "City")]
-        public int? CityID { get; set; }
+        //[Display(Name = "City")]
+        //public int? CityID { get; set; }
     }
 }

@@ -114,9 +114,9 @@ namespace ServiceApp.Areas.Identity.Pages.Account
             [Display(Name = "Phone")]
             [Required(ErrorMessage = "Insert your phone")]
             public int Phone { get; set; }
-            [Display(Name = "City")]
-            [Required(ErrorMessage = "Insert your city")]
-            public int? CityID { get; set; }
+            //[Display(Name = "City")]
+            //[Required(ErrorMessage = "Insert your city")]
+            //public int? CityID { get; set; }
 
         }
 
@@ -169,7 +169,7 @@ namespace ServiceApp.Areas.Identity.Pages.Account
                             contractor.Email = Input.Email;
                             contractor.Phone = Input.Phone;
                             contractor.DateCreated = DateTime.Now;
-                            contractor.CityID = Input.CityID;
+                            //contractor.CityID = Input.CityID;
                             contractor.Id = user.Id;
 
 
@@ -186,7 +186,7 @@ namespace ServiceApp.Areas.Identity.Pages.Account
                             employee.Phone = Input.Phone;
                             employee.DateCreated = DateTime.Now;
                             employee.About = "";
-                            employee.CityID = Input.CityID;
+                            //employee.CityID = Input.CityID;
                             employee.id = user.Id;
 
                             _workUnit.Employee.Add(employee);

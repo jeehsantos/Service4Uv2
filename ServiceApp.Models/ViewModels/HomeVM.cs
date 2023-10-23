@@ -11,5 +11,6 @@ namespace ServiceApp.Models.ViewModels
     public class HomeVM
     {
         public IEnumerable<Article>  ListArticles { get; set; }
+        public IEnumerable<Employee> ListEmployees { get; set; }
     }
 }

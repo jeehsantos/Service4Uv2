@@ -30,13 +30,13 @@ namespace ServiceApp.Models
 
 
 
-        //COD01
-        [Display(Name = "City")]
-        [Required(ErrorMessage = "Insert your city")]
-        public int? CityID { get; set; }
-        //COD01
-        [ForeignKey("CityID")]
-        public City City { get; set; }
+        ////COD01
+        //[Display(Name = "City")]
+        //[Required(ErrorMessage = "Insert your city")]
+        //public int? CityID { get; set; }
+        ////COD01
+        //[ForeignKey("CityID")]
+        //public City City { get; set; }
 
         [Display(Name = "Suburb")]
         public int? SuburbID { get; set; }
