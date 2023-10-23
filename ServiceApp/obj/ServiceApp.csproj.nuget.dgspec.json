@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj": {}
+    "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj": {
+    "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj",
         "projectName": "ServiceApp.Data",
-        "projectPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\obj\\",
+        "projectPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj",
+        "packagesPath": "C:\\Users\\Jefferson.Macedo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jefferson.Macedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj": {
-                "projectPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj"
+              "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj": {
+                "projectPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj"
               },
-              "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj": {
-                "projectPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj"
+              "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj": {
+                "projectPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj"
               }
             }
           }
@@ -90,17 +90,17 @@
         }
       }
     },
-    "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj": {
+    "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj",
+        "projectUniqueName": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj",
         "projectName": "ServiceApp.Models",
-        "projectPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\obj\\",
+        "projectPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\ServiceApp.Models.csproj",
+        "packagesPath": "C:\\Users\\Jefferson.Macedo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jefferson.Macedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -159,17 +159,17 @@
         }
       }
     },
-    "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj": {
+    "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj",
         "projectName": "ServiceApp.Utilities",
-        "projectPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\obj\\",
+        "projectPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\ServiceApp.Utilities.csproj",
+        "packagesPath": "C:\\Users\\Jefferson.Macedo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jefferson.Macedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -214,17 +214,17 @@
         }
       }
     },
-    "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj": {
+    "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj",
+        "projectUniqueName": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj",
         "projectName": "ServiceApp",
-        "projectPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\obj\\",
+        "projectPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\ServiceApp.csproj",
+        "packagesPath": "C:\\Users\\Jefferson.Macedo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jefferson.Macedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -238,8 +238,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj": {
-                "projectPath": "C:\\Users\\user\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj"
+              "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj": {
+                "projectPath": "C:\\Users\\Jefferson.Macedo\\Source\\Repos\\jeehsantos\\Service4Uv2\\ServiceApp.Data\\ServiceApp.Data.csproj"
               }
             }
           }

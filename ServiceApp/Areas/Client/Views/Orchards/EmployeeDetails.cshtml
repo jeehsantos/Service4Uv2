@@ -1,0 +1,162 @@
+﻿@model ServiceApp.Models.Employee
+
+@{
+    ViewData["Title"] = "Service4U2";
+}
+
+<br />
+<br />
+
+<form method="GET" >
+    <div class="row px-2 offset-1 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input asp-for="EmployeeID" value="@Model.EmployeeID" hidden class="form-control" />
+        <input asp-for="id" value="@ViewBag.id" hidden class="form-control" />
+
+        <div class="col-10 offset-1 mt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Name"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Name" value="@Model.Name" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Phone"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Phone" value="@Model.Phone" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Language"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Language" value="@Model.Language" class="form-control" />
+                </div>
+            </div>
+
+            @* <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="City"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="City" disabled class="form-control" />
+                </div>
+            </div> *@
+
+          
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Language"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Language" value="@Model.Language" class="form-control" />
+                </div>
+            </div>
+           
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Email"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Email" value="@Model.Email" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="DateOfBirth"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input type="date" asp-for="DateOfBirth" value="@Model.DateOfBirth" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="SuburbID"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input type="number" asp-for="SuburbID" value="@Model.SuburbID" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Review"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input type="number" asp-for="Review" value="@Model.Review" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="NationalityID"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input type="number" asp-for="NationalityID" value="@Model.NationalityID" class="form-control">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="About"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+
+                    <textarea class="form-control" value="@TempData["About"]" asp-for="About">@Model.About</textarea>
+                </div>
+            </div>
+
+            <fieldset class="form-group">
+                <legend class="mt-4"><label></label></legend>
+                <div class="form-check">
+
+                    <input asp-for="Available" value="@Model.Available" class="form-check-input" type="checkbox" />
+                    <label class="form-check-label" asp-for="Available"></label>
+                    <span asp-validation-for="Available" class="text-danger"></span>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" disabled value="true" asp-for="Active" type="checkbox">
+                    <label class="form-check-label" asp-for="Active"></label>
+                    <span asp-validation-for="Active"  class="form-check-label"></span>
+                </div>
+            </fieldset>
+
+
+            <div class="form-group  row">
+                <div class="col">
+                    <button type="submit" class="btn btn-success form-control" asp-area="Client" asp-controller="Orchards" asp-action="Details"> Return</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+</form>

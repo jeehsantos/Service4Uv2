@@ -24,8 +24,30 @@ namespace ServiceApp.Areas.Client.Controllers
             return View();
         }
 
+      
         [HttpGet]
         public IActionResult Details(int id)
+        {
+            var EmployeeDb = _workUnit.Employee.Get(id);
+            return View(EmployeeDb);
+        }
+
+        [HttpGet]
+        public IActionResult EmployeeDetails(int id)
+        {
+            Employee employee = new Employee();
+            employee = _workUnit.Employee.Get(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+            //In JS it will make fields disabled
+            return View(employee);
+        }
+
+
+        [HttpGet]
+        public IActionResult Edit(int id)
         {
             Contractor contractor = new Contractor();
             contractor = _workUnit.Contractor.Get(id);
@@ -38,11 +60,13 @@ namespace ServiceApp.Areas.Client.Controllers
         }
 
 
+     
+
         #region
         [HttpGet]
         public IActionResult GetAll()
         {
-            return Json(new { data = _workUnit.Contractor.GetAll() });
+            return Json(new { data = _workUnit.Employee.GetAll() });
         }
 
         [HttpDelete]

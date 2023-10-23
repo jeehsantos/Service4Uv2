@@ -22,3 +22,15 @@ C:\Users\user\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\ne
 C:\Users\user\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\refint\ServiceApp.Models.dll
 C:\Users\user\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.pdb
 C:\Users\user\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ref\ServiceApp.Models.dll
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\bin\Debug\net7.0\ServiceApp.Models.deps.json
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\bin\Debug\net7.0\ServiceApp.Models.dll
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\bin\Debug\net7.0\ServiceApp.Models.pdb
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.csproj.AssemblyReference.cache
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.AssemblyInfoInputs.cache
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.AssemblyInfo.cs
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.csproj.CoreCompileInputs.cache
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.dll
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\refint\ServiceApp.Models.dll
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ServiceApp.Models.pdb
+C:\Users\Jefferson.Macedo\Source\Repos\jeehsantos\Service4Uv2\ServiceApp.Models\obj\Debug\net7.0\ref\ServiceApp.Models.dll
