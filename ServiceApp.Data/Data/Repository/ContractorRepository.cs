@@ -29,6 +29,10 @@ namespace ServiceApp.Data.Data.Repository
             );
         }
 
+        public Contractor GetContractor(string userId)
+        {
+            return _context.Contractors.FirstOrDefault(i => i.Id == userId);
+        }
         public void Update(Contractor contractor)
         {
             var objCont = _context.Contractors.FirstOrDefault(s => s.ContractorID == contractor.ContractorID);

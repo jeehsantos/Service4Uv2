@@ -12,6 +12,8 @@ namespace ServiceApp.Data.Data.Repository.IRepository
     {
         IEnumerable<SelectListItem> GetListContractors();
 
+        public Contractor GetContractor(string userId);
+
         void Update(Contractor contractor);
     }
 }

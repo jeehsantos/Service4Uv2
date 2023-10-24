@@ -36,6 +36,9 @@ namespace ServiceApp.Areas.Client.Controllers
                 {
                     return Index(id);
                 }
+                else if(User.IsInRole(Constants.Contractor)){
+                    return View();
+                }
             }
             return View();
 
@@ -52,7 +55,7 @@ namespace ServiceApp.Areas.Client.Controllers
                 ViewBag.Name = employee.Name;
                 ViewBag.Phone = employee.Phone;
                 ViewBag.Email = employee.Email;
-                TempData["About"] = employee.About;
+                ViewBag.About  = employee.About;
                 ViewBag.SuburbID = employee.SuburbID.ToString();
                 ViewBag.DateOfBirth = employee.DateOfBirth;
                 ViewBag.NationalityID = employee.NationalityID;

@@ -2,20 +2,23 @@
 using ServiceApp.Data.Data.Repository.IRepository;
 using ServiceApp.Data;
 using ServiceApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ServiceApp.Areas.Client.Controllers
 {
     [Area("Client")]
     public class OrchardsController : Controller
     {
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IWorkUnit _workUnit;
         private readonly ApplicationDbContext _context;
 
 
-        public OrchardsController(IWorkUnit workUnit, ApplicationDbContext context)
+        public OrchardsController(IWorkUnit workUnit, ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _workUnit = workUnit;
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -47,10 +50,12 @@ namespace ServiceApp.Areas.Client.Controllers
 
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult Edit()
         {
+            var id = _userManager.GetUserId(HttpContext.User);
+
             Contractor contractor = new Contractor();
-            contractor = _workUnit.Contractor.Get(id);
+            contractor = _workUnit.Contractor.GetContractor(id);
             if (contractor == null)
             {
                 return NotFound();
@@ -58,9 +63,21 @@ namespace ServiceApp.Areas.Client.Controllers
 
             return View(contractor);
         }
+         
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Contractor contractor)
+        {
+            if (ModelState.IsValid)
+            {
+                _workUnit.Contractor.Update(contractor);
+                _workUnit.Save();
+                return View(contractor);
+            }
 
+            return View(contractor);
+        }
 
-     
 
         #region
         [HttpGet]

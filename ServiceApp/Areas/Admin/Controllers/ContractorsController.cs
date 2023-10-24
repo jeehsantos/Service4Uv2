@@ -48,10 +48,10 @@ namespace ServiceApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id) 
+        public IActionResult Edit(string id) 
         {
             Contractor contractor = new Contractor();
-            contractor = _workUnit.Contractor.Get(id);
+            contractor = _workUnit.Contractor.GetContractor(id);
             if(contractor == null)
             {
                 return NotFound();
