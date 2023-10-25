@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace ServiceApp.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Writer")]
     [Area("Admin")]
     public class ArticlesController : Controller
     {
@@ -21,14 +21,12 @@ namespace ServiceApp.Areas.Admin.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
-        //[Authorize(Roles = "Writer")]
         [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Writer")]
         [HttpGet]
         public IActionResult Create() 
         {
@@ -41,8 +39,6 @@ namespace ServiceApp.Areas.Admin.Controllers
             return View(articleVM);
         }
 
-        //[Authorize(Roles = "Writer")]
-        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(ArticleVM articleVM)
@@ -76,8 +72,6 @@ namespace ServiceApp.Areas.Admin.Controllers
             return View(articleVM);
         }
 
-        //[Authorize(Roles = "Writer")]
-        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Edit(int? id)
         {
@@ -95,8 +89,6 @@ namespace ServiceApp.Areas.Admin.Controllers
             return View(articleVM);
         }
 
-        //[Authorize(Roles = "Writer")]
-        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(ArticleVM articleVM)
@@ -148,7 +140,6 @@ namespace ServiceApp.Areas.Admin.Controllers
         }
 
         #region
-         
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -178,6 +169,5 @@ namespace ServiceApp.Areas.Admin.Controllers
         }
         #endregion
  
-
     }
 }

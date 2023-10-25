@@ -24,10 +24,21 @@ namespace ServiceApp.Areas.Client.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var id = _userManager.GetUserId(HttpContext.User);
+            return Index(id);
         }
 
-      
+        [HttpPost]
+        public IActionResult Index(string id)
+        {
+            var contractor = _workUnit.Contractor.GetContractor(id);
+            if (contractor != null)
+            {
+                return View(contractor);
+            }
+            return Index();
+        }
+
         [HttpGet]
         public IActionResult Details(int id)
         {
@@ -48,7 +59,7 @@ namespace ServiceApp.Areas.Client.Controllers
             return View(employee);
         }
 
-
+        //edit profile
         [HttpGet]
         public IActionResult Edit()
         {
@@ -64,6 +75,7 @@ namespace ServiceApp.Areas.Client.Controllers
             return View(contractor);
         }
          
+        //edit profile
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Contractor contractor)

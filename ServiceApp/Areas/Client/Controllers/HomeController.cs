@@ -34,44 +34,24 @@ namespace ServiceApp.Areas.Client.Controllers
             {
                 if (User.IsInRole(Constants.Employee))
                 {
-                    return Index(id);
+                    // Change to Employees controler
+                    return RedirectToAction("Index", "Employees");
+
                 }
                 else if(User.IsInRole(Constants.Contractor)){
+                    //Remains in the Home controler
                     return View();
+
                 }
             }
             return View();
 
         }
-
-        [HttpPost]
-        public IActionResult Index(string id)
-        {
-            var employee = _workUnit.Employee.GetEmployee(id);
-            if (employee != null)
-            {
-                ViewBag.EmployeeId = employee.EmployeeID;
-                ViewBag.id = employee.id;
-                ViewBag.Name = employee.Name;
-                ViewBag.Phone = employee.Phone;
-                ViewBag.Email = employee.Email;
-                ViewBag.About  = employee.About;
-                ViewBag.SuburbID = employee.SuburbID.ToString();
-                ViewBag.DateOfBirth = employee.DateOfBirth;
-                ViewBag.NationalityID = employee.NationalityID;
-                ViewBag.Country = employee.Country;
-                ViewBag.Language = employee.Language;
-                ViewBag.Review = employee.Review.ToString();
-                ViewBag.Image = employee.Image;
-                ViewBag.Available = employee.Available;
-                ViewBag.Active = employee.Active;
-                ViewBag.DateCreated = employee.DateCreated;
-
-                return View("EmployeeDetails");
-            }
-            return Index();
-        }
-
+        //[HttpPost]
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
         [HttpGet]
         public IActionResult Articles()
@@ -94,22 +74,6 @@ namespace ServiceApp.Areas.Client.Controllers
         public IActionResult Contact()
         {
             return View();
-        }
-
-
-        //Remove and use only for Employees
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult EmployeeDetails(Employee employee)
-        {
-            //if (ModelState.IsValid)
-            //{
-                _workUnit.Employee.Update(employee);
-                _workUnit.Save();
-                return RedirectToAction(nameof(Index));
-            //}
-
-            //return View(employee);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

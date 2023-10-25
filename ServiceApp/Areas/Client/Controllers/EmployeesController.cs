@@ -2,6 +2,7 @@
 using ServiceApp.Data.Data.Repository.IRepository;
 using ServiceApp.Data;
 using ServiceApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace ServiceApp.Areas.Client.Controllers
 {
@@ -9,29 +10,36 @@ namespace ServiceApp.Areas.Client.Controllers
     [Area("Client")]
     public class EmployeesController : Controller
     {
-
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly IWorkUnit _workUnit;
         private readonly ApplicationDbContext _context;
 
 
-        public EmployeesController(IWorkUnit workUnit, ApplicationDbContext context)
+        public EmployeesController(IWorkUnit workUnit, ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _workUnit = workUnit;
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var id = _userManager.GetUserId(HttpContext.User);
+            return Index(id);
         }
 
-        [HttpGet]
-        public IActionResult Contact()
+        [HttpPost]
+        public IActionResult Index(string id)
         {
-            return View();
+            var employee = _workUnit.Employee.GetEmployee(id);
+            if (employee != null)
+            {
+               return View(employee);
+            }
+            return Index();
         }
-
+         
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(Employee employee)
@@ -45,14 +53,6 @@ namespace ServiceApp.Areas.Client.Controllers
 
             return View(employee);
         }
-
-        #region
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            return Json(new { data = _workUnit.Employee.GetAll() });
-        }
-
-        #endregion
+         
     }
 }

@@ -7,7 +7,7 @@ using ServiceApp.Models;
 
 namespace ServiceApp.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Writer")]
     [Area("Admin")]
     public class CategoriesController : Controller
     {
