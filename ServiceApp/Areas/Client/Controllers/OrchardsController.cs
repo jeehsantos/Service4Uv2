@@ -94,8 +94,8 @@ namespace ServiceApp.Areas.Client.Controllers
         #region
         [HttpGet]
         public IActionResult GetAll()
-        {
-            return Json(new { data = _workUnit.Employee.GetAll() });
+        { 
+            return Json(new { data = _workUnit.Employee.GetAll(u => u.Active && u.Available) });
         }
 
         [HttpDelete]
