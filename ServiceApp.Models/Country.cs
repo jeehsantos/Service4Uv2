@@ -14,7 +14,8 @@ namespace ServiceApp.Models
         public string CountryID { get; set; }
         public string Name { get; set; }
 
-        public List<City> Cities { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+        public ICollection<City> Cities { get; set; }
 
     
     }

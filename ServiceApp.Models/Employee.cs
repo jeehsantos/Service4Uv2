@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -32,37 +33,43 @@ namespace ServiceApp.Models
         [Required(ErrorMessage = "What type of job?")]
         public string About { get; set; }
 
-        [Display(Name = "Suburb")]
-        public int? SuburbID { get; set; }
-
-        [ForeignKey("SuburbID")]
-        public Suburb Suburb { get; set; }
-
         [Display(Name = "Date of birth")]
         public string DateOfBirth { get; set; }
 
         [Display(Name= "Nationality")]
         public string? NationalityID { get; set; }
 
-        [ForeignKey("CountryID")]
-        public Country Country { get; set; }
 
         [Display(Name = "Prefered language")]
         public string Language { get; set; }
         public int Review { get; set; }
-
-        [DataType(DataType.ImageUrl)]
-        [Display(Name="Profile photo")]
-        public string Image { get; set; }
+ 
         public bool Available { get; set; }
         public bool Active { get; set; }
         public DateTime DateCreated { get; set; }
 
-        ////COD01
-        //[ForeignKey("CityID")]
-        //public City City { get; set; }
 
-        //[Display(Name = "City")]
-        //public int? CityID { get; set; }
+        [ForeignKey("CountryID")]
+        public Country Country { get; set; }
+        [Display(Name = "Country")]
+        public string? CountryID { get; set; }
+        ////COD01
+        [ForeignKey("CityID")]
+        public City City { get; set; }
+
+        [Display(Name = "City")]
+         public int? CityID { get; set; }
+
+        
+        [ForeignKey("SuburbID")]
+        public Suburb Suburb { get; set; }
+        [Display(Name = "SuburbID")]
+        public int? SuburbID { get; set; }
+
+        //[ForeignKey("SuburbID")]
+        //public IEnumerable<SelectListItem> ListSuburbs { get; set; }
+        //[ForeignKey("CityID")]
+        //public IEnumerable<SelectListItem> ListCities { get; set; }
+
     }
 }

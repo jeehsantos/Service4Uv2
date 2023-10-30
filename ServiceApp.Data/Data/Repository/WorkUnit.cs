@@ -20,6 +20,9 @@ namespace ServiceApp.Data.Data.Repository
             Employee = new EmployeeRepository(_context);
             Article = new ArticleRepository(_context);
             Category = new CategoryRepository(_context);
+            Suburb = new SuburbRepository(_context);
+            City =  new CityRepository(_context);
+            Country = new CountryRepository(_context);
             User = new UserRepository(_context);
         }
 
@@ -30,6 +33,11 @@ namespace ServiceApp.Data.Data.Repository
         public IArticleRepository Article { get; private set; }
 
         public ICategoryRepository Category { get; private set; }
+
+        public ISuburbRepository Suburb { get; private set; }
+        public ICityRepository City { get; private set; }
+        public ICountryRepository Country { get; private set; }
+
 
         public IUserRepository User { get; private set; }
 

@@ -3,6 +3,7 @@ using ServiceApp.Data.Data.Repository.IRepository;
 using ServiceApp.Data;
 using ServiceApp.Models;
 using Microsoft.AspNetCore.Identity;
+using ServiceApp.Models.ViewModels;
 
 namespace ServiceApp.Areas.Client.Controllers
 {
@@ -31,13 +32,19 @@ namespace ServiceApp.Areas.Client.Controllers
 
         [HttpPost]
         public IActionResult Index(string id)
-        {
-            var employee = _workUnit.Employee.GetEmployee(id);
-            if (employee != null)
+        { 
+            SuburbVM suburbVM = new SuburbVM()
             {
-               return View(employee);
-            }
-            return Index();
+
+                Employee = _workUnit.Employee.GetEmployee(id) ,
+                ListSuburbs = _workUnit.Suburb.GetListSuburb(),
+                ListCities = _workUnit.City.GetListCities(),
+                ListCountries = _workUnit.Country.GetListCountries()
+
+
+            };
+            
+            return View(suburbVM);
         }
          
         [HttpPost]

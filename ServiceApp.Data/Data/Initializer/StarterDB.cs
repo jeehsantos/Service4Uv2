@@ -65,7 +65,7 @@ namespace ServiceApp.Data.Data.Initializer
             }, "Writer123!").GetAwaiter().GetResult();
 
             ApplicationUser userWriter = _context.ApplicationUser.Where(us => us.Email == "writer@admin.com").FirstOrDefault();
-            _userManager.AddToRoleAsync(userWriter, Utilities.Constants.Admin).GetAwaiter().GetResult();
+            _userManager.AddToRoleAsync(userWriter, Utilities.Constants.Writer).GetAwaiter().GetResult();
         }
     }
 }

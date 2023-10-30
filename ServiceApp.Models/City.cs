@@ -15,10 +15,13 @@ namespace ServiceApp.Models
         public int CityID { get; set; }
         public string Name { get; set; }
 
-        [ForeignKey("CountryID")]
         public string? CountryID { get; set; }
+
+        [ForeignKey("CountryID")]
         public Country Country { get; set; }
 
-        public List<Suburb> Suburbs { get; set; }
+        public ICollection<Suburb> Suburbs { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+
     }
 }

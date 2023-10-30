@@ -1,4 +1,4 @@
-﻿@model ServiceApp.Models.Employee
+﻿@model ServiceApp.Models.ViewModels.SuburbVM
 
 @{
     ViewData["Title"] = "Service4U2";
@@ -7,129 +7,122 @@
 <br />
 <br />
 
-<h3 class="text-center">Welcome back @Model.Name!  SSs</h3>
+<h3 class="text-center">Welcome back @Model.Employee.Name! </h3>
 <form method="POST" >
     <div class="row px-2 offset-1 border">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input asp-for="EmployeeID" value="@Model.EmployeeID" hidden class="form-control" />
-        <input asp-for="id" value="@Model.id" hidden class="form-control" />
+        <input asp-for="Employee.EmployeeID" value="@Model.Employee.EmployeeID" hidden class="form-control" />
+        <input asp-for="Employee.id" value="@Model.Employee.id" hidden class="form-control" />
          
         <div class="col-10 offset-1 mt-4">
             <div class="form-group row">
                 <div class="col-4">
                     <label class="col-4">
-                        <label asp-for="Name"></label>
+                        <label asp-for="Employee.Name"></label>
                     </label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Name" value="@Model.Name" class="form-control" />
+                    <input asp-for="Employee.Name" value="@Model.Employee.Name" class="form-control" />
                 </div>
             </div>
 
             <div class="form-group row">
                 <div class="col-4">
                     <label class="col-4">
-                        <label asp-for="Phone"></label>
+                        <label asp-for="Employee.Phone"></label>
                     </label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Phone" value="@Model.Phone" class="form-control" />
+                    <input asp-for="Employee.Phone" value="@Model.Employee.Phone" class="form-control" />
                 </div>
             </div>
 
             <div class="form-group row">
                 <div class="col-4">
                     <label class="col-4">
-                        <label asp-for="Language"></label>
+                        <label asp-for="Employee.Language"></label>
                     </label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Language" value="@Model.Language" class="form-control" />
+                    <input asp-for="Employee.Language" value="@Model.Employee.Language" class="form-control" />
                 </div>
             </div>
+ 
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Employee.Email"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="Employee.Email" value="@Model.Employee.Email" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label class="col-4">
+                        <label asp-for="Employee.DateOfBirth"></label>
+                    </label>
+                </div>
+                <div class="col-8">
+                    <input type="date" asp-for="Employee.DateOfBirth" value="@Model.Employee.DateOfBirth" class="form-control" />
+                </div>
+            </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                    <label class="col-4">
+                            <label asp-for="Employee.Suburb"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        @Html.DropDownListFor(m => m.Employee.SuburbID, Model.ListSuburbs, "-Select suburb-", new{@class = "form-control"})
 
-            @* <div class="form-group row">
-                <div class="col-4">
-                    <label class="col-4">
-                        <label asp-for="City"></label>
-                    </label>
+                    </div>
                 </div>
-                <div class="col-8">
-                    <input asp-for="City" disabled class="form-control" />
-                </div>
-            </div> *@
+            
 
-          
+                <div class="form-group row">
+                     <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Employee.City"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        @Html.DropDownListFor(m => m.Employee.CityID, Model.ListCities , "-Select City-", new{@class = "form-control"})
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Employee.Country"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        @Html.DropDownListFor(m => m.Employee.CountryID, Model.ListCountries , "-Select Country-", new{@class = "form-control"})
+                    </div>
+                </div>
+             
             <div class="form-group row">
                 <div class="col-4">
                     <label class="col-4">
-                        <label asp-for="Language"></label>
+                        <label asp-for="Employee.NationalityID"></label>
                     </label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Language" value="@Model.Language" class="form-control" />
-                </div>
-            </div>
-           
-            <div class="form-group row">
-                <div class="col-4">
-                    <label class="col-4">
-                        <label asp-for="Email"></label>
-                    </label>
-                </div>
-                <div class="col-8">
-                    <input asp-for="Email" value="@Model.Email" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label class="col-4">
-                        <label asp-for="DateOfBirth"></label>
-                    </label>
-                </div>
-                <div class="col-8">
-                    <input type="date" asp-for="DateOfBirth" value="@Model.DateOfBirth" class="form-control" />
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label class="col-4">
-                        <label asp-for="SuburbID"></label>
-                    </label>
-                </div>
-                <div class="col-8">
-                    <input type="number" asp-for="SuburbID" value="@Model.SuburbID" class="form-control">
+                    <input type="number" asp-for="Employee.NationalityID" value="@Model.Employee.NationalityID" class="form-control">
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-4">
                     <label class="col-4">
-                        <label asp-for="Review"></label>
-                    </label>
-                </div>
-                <div class="col-8">
-                    <input type="number" asp-for="Review" value="@Model.Review" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label class="col-4">
-                        <label asp-for="NationalityID"></label>
-                    </label>
-                </div>
-                <div class="col-8">
-                    <input type="number" asp-for="NationalityID" value="@Model.NationalityID" class="form-control">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-4">
-                    <label class="col-4">
-                        <label asp-for="About"></label>
+                        <label asp-for="Employee.About"></label>
                     </label>
                 </div>
                 <div class="col-8">
 
-                    <textarea class="form-control"  asp-for="About">@Model.About</textarea>
+                    <textarea class="form-control" asp-for="Employee.About">@Model.Employee.About</textarea>
                 </div>
             </div>
 
@@ -137,21 +130,21 @@
                 <legend class="mt-4"><label></label></legend>
                 <div class="form-check">
 
-                    <input asp-for="Available" class="form-check-input" type="checkbox" />
-                    <label class="form-check-label" asp-for="Available"></label>
-                    <span asp-validation-for="Available" class="text-danger"></span>
+                    <input asp-for="Employee.Available" class="form-check-input" type="checkbox" />
+                    <label class="form-check-label" asp-for="Employee.Available"></label>
+                    <span asp-validation-for="Employee.Available" class="text-danger"></span>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" disabled asp-for="Active" type="checkbox">
-                    <label class="form-check-label" asp-for="Active"></label>
-                    <span asp-validation-for="Active"  class="form-check-label"></span>
+                    <input class="form-check-input" disabled asp-for="Employee.Active" type="checkbox">
+                    <label class="form-check-label" asp-for="Employee.Active"></label>
+                    <span asp-validation-for="Employee.Active"  class="form-check-label"></span>
                 </div>
             </fieldset>
 
 
             <div class="form-group  row">
                 <div class="col">
-                    <button type="submit" class="btn btn-primary form-control" asp-area="Client" asp-controller="Home" asp-action="EmployeeDetails" asp-route-id="@ViewBag.EmployeeID"> Update</button>
+                    <button type="submit" class="btn btn-primary form-control" asp-area="Client" asp-controller="Employees" asp-action="Edit" asp-route-id="@ViewBag.EmployeeID"> Update</button>
                 </div>
                 
             </div>

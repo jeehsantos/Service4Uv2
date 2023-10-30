@@ -16,6 +16,12 @@ namespace ServiceApp.Data.Data.Repository.IRepository
         IArticleRepository Article { get; }
 
         ICategoryRepository Category { get; }
+
+        ISuburbRepository Suburb { get; }
+        ICityRepository City { get; }
+        ICountryRepository Country { get; }
+
+
         IUserRepository User { get; }
 
         void Save();

@@ -1,4 +1,4 @@
-﻿@model ServiceApp.Models.Employee
+﻿@model ServiceApp.Models.ViewModels.SuburbVM
 
 @{
     ViewData["Title"] = "Service4U";
@@ -15,12 +15,12 @@
             <div class="form-group row">
                 <div class="col-4">
                     <label class="col-4">
-                        <label asp-for="Name"></label>
+                        <label asp-for="Employee.Name"></label>
                     </label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <input asp-for="Employee.Name" class="form-control" />
+                    <span asp-validation-for="Employee.Name" class="text-danger"></span>
                 </div>
             </div>
 
@@ -28,26 +28,12 @@
                 <div class="form-group row">
                     <div class="col-4">
                         <label class="col-4">
-                            <label asp-for="Phone"></label>
+                            <label asp-for="Employee.Phone"></label>
                         </label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="Phone" class="form-control" />
-                        <span asp-validation-for="Phone" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-10 offset-1 mt-4">
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label class="col-4">
-                            <label asp-for="About"></label>
-                        </label>
-                    </div>
-                    <div class="col-8">
-                        <input asp-for="About" class="form-control" />
-                        <span asp-validation-for="About" class="text-danger"></span>
+                        <input asp-for="Employee.Phone" class="form-control" />
+                        <span asp-validation-for="Employee.Phone" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -56,12 +42,12 @@
                 <div class="form-group row">
                     <div class="col-4">
                         <label class="col-4">
-                            <label asp-for="Suburb"></label>
+                            <label asp-for="Employee.About"></label>
                         </label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="Suburb" class="form-control" />
-                        <span asp-validation-for="Suburb" class="text-danger"></span>
+                        <input asp-for="Employee.About" class="form-control" />
+                        <span asp-validation-for="Employee.About" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -70,12 +56,25 @@
                 <div class="form-group row">
                     <div class="col-4">
                         <label class="col-4">
-                            <label asp-for="Language"></label>
+                            <label asp-for="Employee.Suburb"></label>
                         </label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="Language" class="form-control" />
-                        <span asp-validation-for="Language" class="text-danger"></span>
+                        @Html.DropDownListFor(m => m.Employee.SuburbID, Model.ListSuburbs, "-Select suburb-", new{@class = "form-control"})
+
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Employee.City"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                          @Html.DropDownListFor(m => m.Employee.CityID, Model.ListCities , "-Select City-", new{@class = "form-control"})  
                     </div>
                 </div>
             </div>
@@ -84,12 +83,24 @@
                 <div class="form-group row">
                     <div class="col-4">
                         <label class="col-4">
-                            <label asp-for="Email"></label>
+                            <label asp-for="Employee.City"></label>
                         </label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
+                        @Html.DropDownListFor(m => m.Employee.CountryID, Model.ListCountries , "-Select Country-", new{@class = "form-control"})
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 offset-1 mt-4">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label class="col-4">
+                            <label asp-for="Employee.Language"></label>
+                        </label>
+                    </div>
+                    <div class="col-8">
+                        <input asp-for="Employee.Language" class="form-control" />
+                        <span asp-validation-for="Employee.Language" class="text-danger"></span>
                     </div>
                 </div>
             </div>
@@ -98,26 +109,27 @@
                 <div class="form-group row">
                     <div class="col-4">
                         <label class="col-4">
-                            <label asp-for="Image"></label>
+                            <label asp-for="Employee.Email"></label>
                         </label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="Image" class="form-control" />
-                        <span asp-validation-for="Image" class="text-danger"></span>
+                        <input asp-for="Employee.Email" class="form-control" />
+                        <span asp-validation-for="Employee.Email" class="text-danger"></span>
                     </div>
                 </div>
             </div>
 
+          
             <div class="col-10 offset-1 mt-4">
                 <div class="form-group row">
                     <div class="col-4">
                         <label class="col-4">
-                            <label asp-for="DateOfBirth"></label>
+                            <label asp-for="Employee.DateOfBirth"></label>
                         </label>
                     </div>
                     <div class="col-8">
-                        <input asp-for="DateOfBirth" class="form-control" />
-                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        <input asp-for="Employee.DateOfBirth" class="form-control" />
+                        <span asp-validation-for="Employee.DateOfBirth" class="text-danger"></span>
                     </div>
                 </div>
             </div>

@@ -11,6 +11,9 @@ namespace ServiceApp.Data.Data.Repository.IRepository
     public interface IEmployeeRepository : IRepository<Employee>
     {
         IEnumerable<SelectListItem> GetListEmployees();
+        IEnumerable<SelectListItem> GetListSuburbs();
+        IEnumerable<SelectListItem> GetListCities();
+
 
         public Employee GetEmployee(string id);
         void Update(Employee employee);

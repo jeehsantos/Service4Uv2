@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ServiceApp.Data;
 using ServiceApp.Data.Data.Repository.IRepository;
 using ServiceApp.Models;
+using ServiceApp.Models.ViewModels;
 
 namespace ServiceApp.Areas.Admin.Controllers
 {
@@ -28,7 +29,16 @@ namespace ServiceApp.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            SuburbVM suburbVM = new SuburbVM()
+            {
+                Employee = new ServiceApp.Models.Employee(),
+                ListSuburbs = _workUnit.Suburb.GetListSuburb(),
+                ListCities = _workUnit.City.GetListCities(),
+                ListCountries = _workUnit.Country.GetListCountries()
+
+
+            };
+            return View(suburbVM);
         }
 
         [HttpPost]

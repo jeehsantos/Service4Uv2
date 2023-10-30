@@ -28,6 +28,28 @@ namespace ServiceApp.Data.Data.Repository
             }
             );
         }
+        public IEnumerable<SelectListItem> GetListSuburbs()
+        {
+            return _context.Suburbs.Select(i => new SelectListItem()
+            {
+                Text = i.Name,
+                Value = i.SuburbID.ToString(),
+
+            }
+            );
+        }
+
+        public IEnumerable<SelectListItem> GetListCities()
+        {
+            return _context.Cities.Select(i => new SelectListItem()
+            {
+                Text = i.Name,
+                Value = i.CityID.ToString(),
+
+            }
+            );
+        }
+
 
         public Employee GetEmployee(string userId)
         {
@@ -42,11 +64,12 @@ namespace ServiceApp.Data.Data.Repository
             objEmp.Phone = employee.Phone;
             objEmp.Email = employee.Email;
             objEmp.About = employee.About;
-            //objEmp.SuburbID = employee.SuburbID;
+            objEmp.SuburbID = employee.SuburbID;
+            objEmp.CityID = employee.CityID;
+            objEmp.CountryID = employee.CountryID;
             objEmp.DateOfBirth = employee.DateOfBirth;
             objEmp.Language = employee.Language;
             objEmp.Review = employee.Review; 
-            objEmp.Image = employee.Image;
             objEmp.id = employee.id;
             objEmp.Active = employee.Active;
             objEmp.DateCreated = employee.DateCreated;
