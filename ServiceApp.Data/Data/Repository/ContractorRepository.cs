@@ -31,7 +31,7 @@ namespace ServiceApp.Data.Data.Repository
 
         public Contractor GetContractor(string userId)
         {
-            return _context.Contractors.FirstOrDefault(i => i.Id == userId);
+            return _context.Contractors.FirstOrDefault(i => i.PKID == userId);
         }
         public void Update(Contractor contractor)
         {
@@ -43,6 +43,7 @@ namespace ServiceApp.Data.Data.Repository
             objCont.Suburb = contractor.Suburb;
             objCont.JobType = contractor.JobType;
             objCont.CategoryID = contractor.CategoryID;
+            objCont.Active = contractor.Active;
             objCont.SSEEmployer = contractor.SSEEmployer;
 
             _context.SaveChanges();

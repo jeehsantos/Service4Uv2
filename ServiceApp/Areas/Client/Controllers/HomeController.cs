@@ -7,7 +7,10 @@ using ServiceApp.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using ServiceApp.Utilities;
-using Microsoft.CodeAnalysis.Operations;
+using MailKit.Net.Smtp;
+using MimeKit;
+using MailKit.Security;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ServiceApp.Areas.Client.Controllers
 {
@@ -28,7 +31,7 @@ namespace ServiceApp.Areas.Client.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-             
+            
             var id = _userManager.GetUserId(HttpContext.User);
             if(id != null)
             {
@@ -62,6 +65,31 @@ namespace ServiceApp.Areas.Client.Controllers
             };
             return View(homeVM);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Articles(string )
+        {
+            
+            //Para envío de correo
+            var mensaje = new MimeMessage();
+            mensaje.From.Add(new MailboxAddress("Test envio email", "idreamzjsm@gmail.com"));
+            mensaje.To.Add(new MailboxAddress("Test enviado", "idreamzjsm@gmail.com"));
+            mensaje.Subject = "Test email asp.net core";
+            mensaje.Body = new TextPart("plain")
+            {
+                Text = "Hola saludo desde asp.net core"
+            };
+
+            using (var cliente = new SmtpClient())
+            {
+                cliente.Connect("smtp.gmail.com", 465);
+                cliente.Authenticate("jefferson.macedojsm@gmail.com", "fxjm aqev eujc nbmy");
+                cliente.Send(mensaje);
+                cliente.Disconnect(true);
+            }
+            return View(await _context.Usuario.ToListAsync());
+        }
+        
 
         [HttpGet]
         public IActionResult Details(int id)

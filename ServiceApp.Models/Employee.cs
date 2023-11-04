@@ -16,7 +16,7 @@ namespace ServiceApp.Models
         public int EmployeeID { get; set; }
 
         //Use as Key later
-        public string id { get; set; }
+        public string PKID { get; set; }
 
         [Display(Name = "Name")]
         [Required(ErrorMessage = "Insert your name")]

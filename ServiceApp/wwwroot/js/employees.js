@@ -1,6 +1,7 @@
 ﻿var dataTable;
 
 $(document).ready(function () {
+   
     loadDataTable();
 });
 
@@ -15,14 +16,13 @@ function loadDataTable(full) {
         "columns": [
             {
              "data": "employeeID", "width": "10%" },
-            { "data": "image", "width": "30%" },
             { "data": "name", "width": "20%" },
             { "data": "suburb", "width": "20%" },
             { "data": "language", "width": "20%" },
             { "data": "review", "width": "20%" },
             {
                 "data": "active", render: (data, type, row) =>
-                    type === 'display' ? '<input type="checkbox" disabled class="editor-active">' : data,
+                    type === 'display' ? '<input type="checkbox" disabled asp-for="Active" class="editor-active">' : data,
                 className: 'dt-body-center'
             },
 
@@ -66,6 +66,7 @@ function Delete(url) {
                 if (data.success) {
                     toastr.success(data.message);
                     dataTable.ajax.reload();
+                    location.reload();
                 }
                 else {
                     toastr.error(data.message);

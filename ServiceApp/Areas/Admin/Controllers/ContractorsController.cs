@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ServiceApp.Data;
 using ServiceApp.Data.Data.Repository.IRepository;
 using ServiceApp.Models;
@@ -12,12 +14,15 @@ namespace ServiceApp.Areas.Admin.Controllers
     {
         private readonly IWorkUnit _workUnit;
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
 
-        public ContractorsController(IWorkUnit workUnit, ApplicationDbContext context)
+
+        public ContractorsController(IWorkUnit workUnit, ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _workUnit = workUnit;
             _context = context;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -48,10 +53,10 @@ namespace ServiceApp.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(string id) 
+        public IActionResult Edit(int id) 
         {
             Contractor contractor = new Contractor();
-            contractor = _workUnit.Contractor.GetContractor(id);
+            contractor = _workUnit.Contractor.Get(id);
             if(contractor == null)
             {
                 return NotFound();
@@ -82,21 +87,33 @@ namespace ServiceApp.Areas.Admin.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            //Contractor
             var objCont = _workUnit.Contractor.Get(id);
-            if (objCont == null)
+
+            //User login
+            var login = await _userManager.FindByIdAsync(objCont.PKID);
+
+            //User in roles
+            var role = await _context.UserRoles.FirstOrDefaultAsync(u => u.UserId == login.Id);
+
+            if (objCont == null && login == null && role == null)
             {
                 return Json(new { success = false, message = "Error to delete" });
             }
-            //if (objCont.Id == null)
-            //{
-            //    return Json(new { success = false, message = "Error to delete" });
-            //}
-
-
-            //_workUnit.Contractor.Remove(objCont);
+          
+            //Removes contractor
+            _workUnit.Contractor.Remove(objCont);
             _workUnit.Save();
+
+            //Removes login
+            _userManager.DeleteAsync(login);
+
+            //Removes role
+            _context.UserRoles.Remove(role);
+            _context.SaveChanges();
+
             return Json(new { success = true, message = "Contractor deleted !" });
 
         }

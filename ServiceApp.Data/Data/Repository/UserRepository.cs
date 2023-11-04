@@ -23,8 +23,8 @@ namespace ServiceApp.Data.Data.Repository
         {
             var userDb = _context.ApplicationUser.FirstOrDefault(u => u.Id == IdUser);
             userDb.LockoutEnd = DateTime.Now.AddYears(1);
-            var userEmp = _context.Employees.FirstOrDefault(u => u.id == IdUser);
-            var userCont = _context.Contractors.FirstOrDefault(u => u.Id == IdUser);
+            var userEmp = _context.Employees.FirstOrDefault(u => u.PKID == IdUser);
+            var userCont = _context.Contractors.FirstOrDefault(u => u.PKID == IdUser);
 
             if (userEmp != null)
             {
@@ -41,8 +41,8 @@ namespace ServiceApp.Data.Data.Repository
         {
             var userDb = _context.ApplicationUser.FirstOrDefault(u => u.Id == IdUser);
             userDb.LockoutEnd = DateTime.Now;
-            var userEmp = _context.Employees.FirstOrDefault(u => u.id == IdUser);
-            var userCont = _context.Contractors.FirstOrDefault(u => u.Id == IdUser);
+            var userEmp = _context.Employees.FirstOrDefault(u => u.PKID == IdUser);
+            var userCont = _context.Contractors.FirstOrDefault(u => u.PKID == IdUser);
 
             if (userEmp != null)
             {

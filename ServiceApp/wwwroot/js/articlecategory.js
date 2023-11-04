@@ -27,6 +27,7 @@ function loadDataTable() {
                                 <i class="far fa-edit"></i> Edit 
                                 </a>
                                 &nbsp;
+                                
                                 <a onclick=Delete("/Admin/Categories/Delete/${data}") class="btn btn-danger text-white" style="cursor:pointer; width:100px;">
                                 <i class="far fa-trash-alt"></i> Delete
                                 </a>

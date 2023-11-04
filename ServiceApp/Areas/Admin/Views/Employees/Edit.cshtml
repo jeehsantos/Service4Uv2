@@ -1,4 +1,4 @@
-﻿@model ServiceApp.Models.ViewModels.SuburbVM
+﻿@model ServiceApp.Models.Employee
 
 @{
     ViewData["Title"] = "Service4U";
@@ -11,72 +11,35 @@
 <form method="POST" asp-action="Edit">
     <div class="row px-2 offset-1 border">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <input asp-for="Employee.EmployeeID" hidden class="form-control" />
-        <input asp-for="Employee.About" hidden class="form-control" />
-        <input asp-for="Employee.DateOfBirth" hidden class="form-control" />
-        <input asp-for="Employee.Phone" hidden class="form-control" />
-        <input asp-for="Employee.Email" hidden class="form-control" />
+        <input asp-for="EmployeeID" hidden class="form-control" />
+        <input asp-for="About" hidden class="form-control" />
+        <input asp-for="DateOfBirth" hidden class="form-control" />
+        <input asp-for="Phone" hidden class="form-control" />
+        <input asp-for="Email" hidden class="form-control" />
+        <input asp-for="PKID" hidden class="form-control" />
+
 
         <div class="col-10 offset-1 mt-4">
             <div class="form-group row">
                 <div class="col-4">
                     <label class="col-4">
-                        <label asp-for="Employee.Name"></label>
+                        <label asp-for="Name"></label>
                     </label>
                 </div>
                 <div class="col-8">
-                    <input asp-for="Employee.Name" class="form-control" />
-                    <span asp-validation-for="Employee.Name" class="text-danger"></span>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
             </div>
-
-            <div class="col-10 offset-1 mt-4">
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label class="col-4">
-                            <label asp-for="Employee.Suburb"></label>
-                        </label>
-                    </div>
-                    <div class="col-8">
-                        @Html.DropDownListFor(m => m.Employee.SuburbID, Model.ListSuburbs, "-Select suburb-", new{@class = "form-control"})
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-10 offset-1 mt-4">
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label class="col-4">
-                            <label asp-for="Employee.City"></label>
-                        </label>
-                    </div>
-                    <div class="col-8">
-                        @Html.DropDownListFor(m => m.Employee.CityID, Model.ListCities , "-Select City-", new{@class = "form-control"})
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-10 offset-1 mt-4">
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label class="col-4">
-                            <label asp-for="Employee.City"></label>
-                        </label>
-                    </div>
-                    <div class="col-8">
-                        @Html.DropDownListFor(m => m.Employee.CountryID, Model.ListCountries , "-Select Country-", new{@class = "form-control"})
-                    </div>
-                </div>
-            </div>
+ 
             <div class="col-4">
                 <label class="col-4">
-                    <label asp-for="Employee.Language"></label>
+                    <label asp-for="Language"></label>
                 </label>
             </div>
             <div class="col-8">
-                <input asp-for="Employee.Language" class="form-control" />
-                <span asp-validation-for="Employee.Language" class="text-danger"></span>
+                <input asp-for="Language" class="form-control" />
+                <span asp-validation-for="Language" class="text-danger"></span>
             </div>
         </div>
   
@@ -84,20 +47,20 @@
                 <legend class="mt-4"><label></label></legend>
                 <div class="form-check">
 
-                <input asp-for="Employee.Available" class="form-check-input" type="checkbox" />
-                <label class="form-check-label" asp-for="Employee.Available"></label>
-                <span asp-validation-for="Employee.Available" class="text-danger"></span>
+                <input class="form-check-input"  asp-for="Available" type="checkbox" />
+                <label class="form-check-label" asp-for="Available"></label>
+                <span class="text-danger"  asp-validation-for="Available"></span>
                 </div>
                 <div class="form-check">
-                <input class="form-check-input" asp-for="Employee.Active" type="checkbox">
-                <label class="form-check-label" asp-for="Employee.Active"></label>
-                <span asp-validation-for="Employee.Active" class="form-check-label"></span>
+                <input class="form-check-input" asp-for="Active" type="checkbox" />
+                <label class="form-check-label" asp-for="Active"></label>
+                <span asp-validation-for="Active" class="form-check-label"></span>
                 </div>
             </fieldset>
 
             <div class="form-group  row">
                 <div class="col">
-                <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.Employee.EmployeeID"> Update</button>
+                <button type="submit" class="btn btn-primary form-control" asp-route-id="@Model.PKID"> Update</button>
                 </div>
                 <div class="col">
                     <a asp-action="Index" class="btn btn-success form-control">Return</a>

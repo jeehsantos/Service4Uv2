@@ -14,7 +14,7 @@ namespace ServiceApp.Models
         public int ContractorID { get; set; }
 
         //Use as PK later
-        public string Id { get; set; }
+        public string PKID { get; set; }
 
 
         [Display(Name = "Contractor name")]

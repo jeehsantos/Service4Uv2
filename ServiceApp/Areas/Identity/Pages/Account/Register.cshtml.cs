@@ -170,7 +170,7 @@ namespace ServiceApp.Areas.Identity.Pages.Account
                             contractor.Phone = Input.Phone;
                             contractor.DateCreated = DateTime.Now;
                             //contractor.CityID = Input.CityID;
-                            contractor.Id = user.Id;
+                            contractor.PKID = user.Id;
 
 
                             _workUnit.Contractor.Add(contractor);
@@ -187,7 +187,7 @@ namespace ServiceApp.Areas.Identity.Pages.Account
                             employee.DateCreated = DateTime.Now;
                             employee.About = "";
                             //employee.CityID = Input.CityID;
-                            employee.id = user.Id;
+                            employee.PKID = user.Id;
 
                             _workUnit.Employee.Add(employee);
                             _workUnit.Save();

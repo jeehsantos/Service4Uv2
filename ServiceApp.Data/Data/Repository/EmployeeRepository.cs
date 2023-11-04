@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.WebPages;
 
 namespace ServiceApp.Data.Data.Repository
 {
@@ -53,7 +54,7 @@ namespace ServiceApp.Data.Data.Repository
 
         public Employee GetEmployee(string userId)
         {
-            return _context.Employees.FirstOrDefault(i => i.id == userId);
+            return _context.Employees.FirstOrDefault(i => i.PKID == userId);
         }
 
         public void Update(Employee employee)
@@ -63,16 +64,15 @@ namespace ServiceApp.Data.Data.Repository
             objEmp.Name = employee.Name;
             objEmp.Phone = employee.Phone;
             objEmp.Email = employee.Email;
-            objEmp.About = employee.About;
+            objEmp.About =  employee.About.IsEmpty() ? "" : employee.About;
             objEmp.SuburbID = employee.SuburbID;
             objEmp.CityID = employee.CityID;
             objEmp.CountryID = employee.CountryID;
             objEmp.DateOfBirth = employee.DateOfBirth;
             objEmp.Language = employee.Language;
             objEmp.Review = employee.Review; 
-            objEmp.id = employee.id;
+            objEmp.PKID = employee.PKID;
             objEmp.Active = employee.Active;
-            objEmp.DateCreated = employee.DateCreated;
             objEmp.NationalityID = employee.NationalityID;
             objEmp.Available = employee.Available;
             _context.SaveChanges();

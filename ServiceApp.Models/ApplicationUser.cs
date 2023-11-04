@@ -13,10 +13,10 @@ namespace ServiceApp.Models
         [Required(ErrorMessage = "Insert your name")]
         public string Name { get; set; }
 
-         
         public string? City { get; set; }
+        
 
-         
+
         public string? Country { get; set; }
     }
 }
